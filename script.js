@@ -1,9 +1,13 @@
 var buttonAdd = document.querySelector('.button-add');
+var buttonAllReadDelete = document.querySelector('.read-button-delete');
 var userList = document.querySelector('#user-list');
 var urlBar =  document.querySelector('#url-input');
 var titleBar = document.querySelector('#title-input');
 var urlContent = document.querySelector('#url-input').value;
 var titleContent = document.querySelector('#title-input').value;
+var bookmarkTotal = document.querySelector('#link-total').innerText;
+bookmarkTotal = parseInt(bookmarkTotal);
+var total = 0;
 
 var liQueryAll = function() {
   return document.querySelectorAll('li');
@@ -19,6 +23,7 @@ var deleteQueryAll = function() {
 }
 
 function addBookmark() {
+  var newElementDiv = document.createElement('div');
   var newElementLi = document.createElement('li');
   var readButton = document.createElement('button');
   var deleteButton = document.createElement('button');
@@ -32,13 +37,14 @@ function addBookmark() {
 
   var newBookmark = document.createTextNode(titleContent);
   newElementLi.appendChild(newBookmark);
- 
 
-  userList.appendChild(newElementLi);
-  userList.appendChild(a);
+  userList.appendChild(newElementDiv);
+
+  newElementDiv.appendChild(newElementLi);
+  newElementDiv.appendChild(a);
   a.appendChild(breakElement);
-  userList.appendChild(readButton);
-  userList.appendChild(deleteButton);
+  newElementDiv.appendChild(readButton);
+  newElementDiv.appendChild(deleteButton);
 
   readButton.setAttribute('class', 'read-button');
   deleteButton.setAttribute('class', 'delete-button');
@@ -51,22 +57,22 @@ function addBookmark() {
   deleteButton.appendChild(newDeleteContent);
 
   readButton.addEventListener('click', function() {
-    if (newElementLi.classList.contains('read')) {
-      newElementLi.setAttribute('class', '');
+    if (newElementDiv.classList.contains('read')) {
+      newElementDiv.setAttribute('class', '');
       a.setAttribute('class', '');
+      // a.setAttribute('class', '');
     }
     else {
-      newElementLi.setAttribute('class', 'read');
-      a.setAttribute('class', 'read-link');
+      newElementDiv.setAttribute('class', 'read');
+      a.setAttribute('class', 'read');
+      // a.setAttribute('class', 'read-link');
     }
   })
 
   deleteButton.addEventListener('click', function() {
-    newElementLi.remove();
-    a.remove();
-
-    readButton.remove();
-    deleteButton.remove();
+    newElementDiv.remove();
+    total--;
+    document.querySelector('#link-total').innerHTML = total;
   })
 
   let liArray = Array.from(liQueryAll());
@@ -87,13 +93,18 @@ function addBookmark() {
     deleteButton.setAttribute('id', [i] + 10000);
   }
 
+  total++;
+  document.querySelector('#link-total').innerHTML = total;
 }
-
 
 
 createBookmark = buttonAdd.addEventListener('click', function () {
   addBookmark();
 })
+
+// buttonAllReadDelete.addEventListener('click', function() {
+//   document.querySelectorAll('.read').remove();
+// })
 
 function submitDisabled() {
   if (titleBar.value !== '' && urlBar.value !== '') {
