@@ -5,15 +5,18 @@ var titleBar = document.querySelector('#title-input');
 var urlContent = document.querySelector('#url-input').value;
 var titleContent = document.querySelector('#title-input').value;
 
-// var liQueryAll = function() {
-//   return document.querySelectorAll('li');
-// }
-// var readQueryAll = function() {
-//   return document.querySelectorAll('.read-button');
-// }
-// var deleteQueryAll = function() {
-//   return document.querySelectorAll('.delete-button');
-// }
+var liQueryAll = function() {
+  return document.querySelectorAll('li');
+}
+var aQueryAll = function() {
+  return document.querySelectorAll('a');
+}
+var readQueryAll = function() {
+  return document.querySelectorAll('.read-button');
+}
+var deleteQueryAll = function() {
+  return document.querySelectorAll('.delete-button');
+}
 
 function addBookmark() {
   var newElementLi = document.createElement('li');
@@ -61,26 +64,32 @@ function addBookmark() {
   deleteButton.addEventListener('click', function() {
     newElementLi.remove();
     a.remove();
-    
+
     readButton.remove();
     deleteButton.remove();
   })
 
-  // let liArray = Array.from(liQueryAll());
-  // let readArray = Array.from(readQueryAll());
-  // let deleteArray = Array.from(deleteQueryAll())
+  let liArray = Array.from(liQueryAll());
+  let readArray = Array.from(readQueryAll());
+  let deleteArray = Array.from(deleteQueryAll());
+  let aArray = Array.from(aQueryAll());
 
-  // for (var i = 0; i < liArray.length; i++) {
-  //   newElementLi.setAttribute('id', [i]);
-  // }
-  // for (var i = 0; i < readArray.length; i++) {
-  //   readButton.setAttribute('id', [i] + 100);
-  // }
-  // for (var i = 0; i < deleteArray.length; i++) {
-  //   deleteButton.setAttribute('id', [i] + 1000);
-  // }
+  for (var i = 0; i < liArray.length; i++) {
+    newElementLi.setAttribute('id', [i]);
+  }
+  for (var i = 0; i < aArray.length; i++) {
+    a.setAttribute('id', [i] + 100)
+  }
+  for (var i = 0; i < readArray.length; i++) {
+    readButton.setAttribute('id', [i] + 1000);
+  }
+  for (var i = 0; i < deleteArray.length; i++) {
+    deleteButton.setAttribute('id', [i] + 10000);
+  }
 
 }
+
+
 
 createBookmark = buttonAdd.addEventListener('click', function () {
   addBookmark();
@@ -112,3 +121,5 @@ urlBar.addEventListener('keyup', function() {
 titleBar.addEventListener('keyup', function() {
   submitDisabled();
 });
+
+//for turning each li and buttons into arrays with unique identifiers.
