@@ -1,0 +1,15 @@
+li {
+  list-style: none;
+}
+
+.read-button:hover {
+  color: blue;
+}
+
+.button-add:hover {
+  color: green;
+}
+
+.delete-button:hover {
+  color: red;
+}
