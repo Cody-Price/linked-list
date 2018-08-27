@@ -1,5 +1,9 @@
 var buttonAdd = document.querySelector('.button-add');
+var userList = document.querySelector('#user-list');
 
+var liQueryAll = function() {
+  return document.querySelectorAll('li');
+}
 var readQueryAll = function() {
   return document.querySelectorAll('.read-button');
 }
@@ -13,7 +17,6 @@ function addBookmark() {
   var deleteButton = document.createElement('button');
   var urlContent = document.querySelector('#url-input').value;
   var titleContent = document.querySelector('#title-input').value;
-  var userList = document.querySelector('#user-list');
   
   var titleUrlContent = titleContent + ' ' + urlContent;
   var newBookmark = document.createTextNode(titleUrlContent);
@@ -34,20 +37,42 @@ function addBookmark() {
   readButton.appendChild(newReadContent);
   deleteButton.appendChild(newDeleteContent);
 
-  let readArray = Array.from(readQueryAll());
-  let deleteArray = Array.from(deleteQueryAll())
+  // let liArray = Array.from(liQueryAll());
+  // let readArray = Array.from(readQueryAll());
+  // let deleteArray = Array.from(deleteQueryAll())
 
-  for (var i = 0; i < readArray.length; i++) {
-    readButton.setAttribute('id', [i]);
-  }
-  for (var i = 0; i < deleteArray.length; i++) {
-    deleteButton.setAttribute('id', [i] + 100);
-  }
+  // for (var i = 0; i < liArray.length; i++) {
+  //   newElementLi.setAttribute('id', [i]);
+  // }
+  // for (var i = 0; i < readArray.length; i++) {
+  //   readButton.setAttribute('id', [i] + 100);
+  // }
+  // for (var i = 0; i < deleteArray.length; i++) {
+  //   deleteButton.setAttribute('id', [i] + 1000);
+  // }
+
+  readButton.addEventListener('click', function() {
+    if (newElementLi.classList.contains('read')) {
+      newElementLi.setAttribute('class', '');
+    }
+    else {
+      newElementLi.setAttribute('class', 'read');
+    }
+  })
+
+
+
+  deleteButton.addEventListener('click', function() {
+    newElementLi.remove();
+    readButton.remove();
+    deleteButton.remove();
+  })
 }
 
 createBookmark = buttonAdd.addEventListener('click', function () {
   addBookmark();
 })
+
 
 
 

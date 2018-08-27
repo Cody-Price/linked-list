@@ -3,7 +3,7 @@ li {
 }
 
 .read-button:hover {
-  color: blue;
+  color: magenta;
 }
 
 .button-add:hover {
@@ -12,4 +12,8 @@ li {
 
 .delete-button:hover {
   color: red;
+}
+
+.read {
+  color: magenta;
 }
