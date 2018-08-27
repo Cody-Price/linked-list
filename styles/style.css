@@ -1,0 +1,32 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+.upper-sec {
+ background-color: #455A64;
+ width:100%;
+}
+.upper-sec h1 {
+  font-weight: 800;
+  color: #fff;
+}
+
+img {
+  width: 50px;
+}
+
+form {
+  box-sizing: border-box;
+  min-width: 300px;
+  max-width: 600px;
+  width: 100%;
+/*  border-box keeps the box size the same as your set width 
+  and hight regardless of padding margin bourder etc.*/
+  padding: 10px;
+}
+
+input{
+  box-sizing: border-box;
+  height: 30px;
+  width: 100%;
+  margin-bottom: 15px;
+}
