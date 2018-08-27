@@ -6,8 +6,8 @@ li {
   color: magenta;
 }
 
-.button-add:hover {
-  color: green;
+.button-add:hover:enabled {
+  color: blue;
 }
 
 .delete-button:hover {
@@ -16,4 +16,12 @@ li {
 
 .read {
   color: magenta;
+}
+
+.button-add:disabled {
+  background-color: lightgray;
+}
+
+.button-add {
+  background-color: 0;
 }

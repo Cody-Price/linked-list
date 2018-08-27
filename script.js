@@ -1,5 +1,9 @@
 var buttonAdd = document.querySelector('.button-add');
 var userList = document.querySelector('#user-list');
+var urlBar =  document.querySelector('#url-input');
+var titleBar = document.querySelector('#title-input');
+var urlContent = document.querySelector('#url-input').value;
+var titleContent = document.querySelector('#title-input').value;
 
 var liQueryAll = function() {
   return document.querySelectorAll('li');
@@ -73,9 +77,23 @@ createBookmark = buttonAdd.addEventListener('click', function () {
   addBookmark();
 })
 
+function submitDisabled() {
+  if (titleBar.value !== '' && urlBar.value !== '') {
+    buttonAdd.disabled = false;
+  }
+  else {
+    buttonAdd.disabled = true;
+  }
+};
 
 
+urlBar.addEventListener('keyup', function() {
+  submitDisabled();
+});
 
+titleBar.addEventListener('keyup', function() {
+  submitDisabled();
+});
 
 
 
