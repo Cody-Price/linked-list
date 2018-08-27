@@ -1,0 +1,31 @@
+li {
+  list-style: none;
+}
+
+.read-button:hover {
+  color: magenta;
+}
+
+.button-add:hover:enabled {
+  color: blue;
+}
+
+.delete-button:hover {
+  color: red;
+}
+
+.read {
+  color: magenta;
+}
+
+.read-link {
+  color: lightpink;
+}
+
+.button-add:disabled {
+  background-color: lightgray;
+}
+
+.button-add {
+  background-color: 0;
+}
