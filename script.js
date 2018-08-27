@@ -5,15 +5,15 @@ var titleBar = document.querySelector('#title-input');
 var urlContent = document.querySelector('#url-input').value;
 var titleContent = document.querySelector('#title-input').value;
 
-var liQueryAll = function() {
-  return document.querySelectorAll('li');
-}
-var readQueryAll = function() {
-  return document.querySelectorAll('.read-button');
-}
-var deleteQueryAll = function() {
-  return document.querySelectorAll('.delete-button');
-}
+// var liQueryAll = function() {
+//   return document.querySelectorAll('li');
+// }
+// var readQueryAll = function() {
+//   return document.querySelectorAll('.read-button');
+// }
+// var deleteQueryAll = function() {
+//   return document.querySelectorAll('.delete-button');
+// }
 
 function addBookmark() {
   var newElementLi = document.createElement('li');
@@ -21,13 +21,19 @@ function addBookmark() {
   var deleteButton = document.createElement('button');
   var urlContent = document.querySelector('#url-input').value;
   var titleContent = document.querySelector('#title-input').value;
-  
-  var titleUrlContent = titleContent + ' ' + urlContent;
-  var newBookmark = document.createTextNode(titleUrlContent);
+  var breakElement = document.createElement('br');
+
+  var a = document.createElement('a');
+  a.href = urlContent;
+  a.innerHTML = urlContent;
+
+  var newBookmark = document.createTextNode(titleContent);
   newElementLi.appendChild(newBookmark);
  
 
   userList.appendChild(newElementLi);
+  userList.appendChild(a);
+  a.appendChild(breakElement);
   userList.appendChild(readButton);
   userList.appendChild(deleteButton);
 
@@ -40,6 +46,25 @@ function addBookmark() {
 
   readButton.appendChild(newReadContent);
   deleteButton.appendChild(newDeleteContent);
+
+  readButton.addEventListener('click', function() {
+    if (newElementLi.classList.contains('read')) {
+      newElementLi.setAttribute('class', '');
+      a.setAttribute('class', '');
+    }
+    else {
+      newElementLi.setAttribute('class', 'read');
+      a.setAttribute('class', 'read-link');
+    }
+  })
+
+  deleteButton.addEventListener('click', function() {
+    newElementLi.remove();
+    a.remove();
+    
+    readButton.remove();
+    deleteButton.remove();
+  })
 
   // let liArray = Array.from(liQueryAll());
   // let readArray = Array.from(readQueryAll());
@@ -55,22 +80,6 @@ function addBookmark() {
   //   deleteButton.setAttribute('id', [i] + 1000);
   // }
 
-  readButton.addEventListener('click', function() {
-    if (newElementLi.classList.contains('read')) {
-      newElementLi.setAttribute('class', '');
-    }
-    else {
-      newElementLi.setAttribute('class', 'read');
-    }
-  })
-
-
-
-  deleteButton.addEventListener('click', function() {
-    newElementLi.remove();
-    readButton.remove();
-    deleteButton.remove();
-  })
 }
 
 createBookmark = buttonAdd.addEventListener('click', function () {
@@ -86,6 +95,15 @@ function submitDisabled() {
   }
 };
 
+urlBar.addEventListener('paste', function() {
+  if (titleBar.value !== '') {
+    buttonAdd.disabled = false;
+  }
+  else {
+    buttonAdd.disabled = true;
+  }
+  console.log('pasted');
+})
 
 urlBar.addEventListener('keyup', function() {
   submitDisabled();
@@ -94,34 +112,3 @@ urlBar.addEventListener('keyup', function() {
 titleBar.addEventListener('keyup', function() {
   submitDisabled();
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function readStyle() {
-//   var readUserButton = document.querySelector('.read-button');
-//   var deleteUserButton = document.querySelector('.delete-button');
-//   readUserButton.addEventListener('click', function() {
-//     document.querySelector('li').style.color = 'purple';
-//     console.log('click');
-//   })
-// }
-
-// document.querySelector('body').addEventListener('click', function () {
-//   readStyle();
-// })
-
-

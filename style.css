@@ -18,6 +18,10 @@ li {
   color: magenta;
 }
 
+.read-link {
+  color: lightpink;
+}
+
 .button-add:disabled {
   background-color: lightgray;
 }
