@@ -51,10 +51,6 @@ input{
   color: white;
 }
 
-.button-add {
-  color: white;
-}
-
 a {
   border-top: solid 2px;
   border-bottom: solid 2px;
@@ -136,14 +132,6 @@ button {
   color: #455A64;
 }
 
-.read {
-/*  width: 90%;
-  border: solid 2px #607D8B;
-  margin: 15px auto;
-  padding: 5px 0px;
-  height: 117px;*/
-}
-
 .read-button {
   color: #F05A28;
 }
@@ -155,4 +143,15 @@ li {
   color: #455A64;
   margin: 8px 7px;
   font-size: 1.3em;
+}
+
+.button-add {
+  background-color: #FEC107;
+  box-sizing: border-box;
+  border: none;
+  height: 40px;
+  width: 100%;
+  margin-bottom: 15px;
+  font-size: 1.5em;
+  font-weight: 400;
 }
