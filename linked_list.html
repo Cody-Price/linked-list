@@ -17,10 +17,12 @@
       <form>
         <input type="text" name="title" id="title-input" placeholder="Website Title">
         <input type="url" name="link" id="url-input" placeholder="Website URL">
-        <button type="button" class="button-add">Enter</button>
+        <button type="button" class="button-add" disabled="true">Enter</button>
       </form>
+      <button id="clear-read">Clear All Read</button>
       <p class="total-links-paragraph">Total number of links <span id="link-total">0</span></p>
       <p class="total-read-links-paragraph">Total number of Read Links <span id="read-total">0</span></p>
+      <p class="total-unread-links-paragraph">Total number of Unread Links <span id="unread-total">0</span></p>
     </section>
     <section class="lower-sec">
       <article id="user-list">
@@ -32,5 +34,6 @@
       </article>
     </section>
   </body>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="script.js"></script>
 </html>

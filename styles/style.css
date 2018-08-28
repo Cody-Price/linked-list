@@ -47,6 +47,10 @@ input{
   font-weight: 400;
 }
 
+#clear-read {
+  color: white;
+}
+
 .button-add {
   color: white;
 }

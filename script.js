@@ -118,6 +118,14 @@ function addBookmark() {
   document.querySelector('#link-total').innerHTML = total;
 }
 
+$('#clear-read').on('click', function() {
+  console.log('click');
+  $('.read').remove();
+  total = total - totalRead;
+  document.querySelector('#link-total').innerHTML = total;
+  totalRead = 0;
+  document.querySelector('#read-total').innerHTML = totalRead;
+})
 
 createBookmark = buttonAdd.addEventListener('click', function () {
   addBookmark();
