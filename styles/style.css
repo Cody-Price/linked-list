@@ -1,5 +1,7 @@
+
 body {
   font-family: 'Open Sans', sans-serif;
+  background-color: #CFD8DC;
 }
 .upper-sec {
  background-color: #455A64;
@@ -10,9 +12,13 @@ body {
   color: #fff;
 }
 
+.lower-sec {
+  background-color: #CFD8DC;
+}
+
 img {
   width: 50px;
-  height: 30px;
+  height: 20px;
 }
 
 h1 {
@@ -29,7 +35,7 @@ form {
 /*  border-box keeps the box size the same as your set width 
   and hight regardless of padding margin bourder etc.*/
   padding: 20px 10px;
-  height: 200px;
+  height: 190px;
 }
 
 input{
@@ -41,6 +47,63 @@ input{
   font-weight: 400;
 }
 
+.button-add {
+  color: white;
+}
+
+a {
+  border-top: solid 2px;
+  border-bottom: solid 2px;
+  border-color: #CFD8DC;
+  padding: 20px 0px;
+  display: block;
+  width: 95%;
+  margin: 0px auto;
+  color: #607D8B;
+  text-decoration: underline solid #f2f2f4;
+}
+
+a:hover {
+  font-weight: 800;
+  color: #455a54;
+  text-decoration: underline solid #ffc107;
+}
+
+.pre-read {
+  background-color: transparent;
+  border: none;
+  text-decoration: underline solid #f2f4f4;
+}
+
+.pre-read:hover {
+  font-weight: 800;
+  color: #455a54;
+  text-decoration: underline solid #ffc107;
+}
+
+.read-button {
+  float: left;
+  margin: 5px 0px;
+  color: #455A64;
+  background-color: transparent;
+  border: none;
+  text-decoration: underline solid #f2f4f4;
+}
+
+.delete-button {
+  float: right;
+  margin: 5px 0px;
+  color: #455A64;
+  border: none;
+  background-color: transparent;
+  text-decoration: underline solid #f2f2f4;
+}
+
+.delete-button:hover {
+  color: #455a54;
+  text-decoration: underline solid #ffc107;
+}
+
 #title-input,
 #url-input {
   padding-left: 5px;
@@ -50,9 +113,42 @@ input{
   width: 100%;
 }
 
-.read {
+div {
   width: 90%;
-  border: solid 2px red;
-  margin: 0px auto;
-  padding: 0px 0px;
+  border: solid 2px #607D8B;
+  margin: 15px auto;
+  padding: 5px 0px;
+  height: 117px;
+  background-color: white;
+}
+
+div.read {
+  background-color: #f2f2f4;
+}
+
+button {
+  float: left;
+  margin: 5px 0px;
+  color: #455A64;
+}
+
+.read {
+/*  width: 90%;
+  border: solid 2px #607D8B;
+  margin: 15px auto;
+  padding: 5px 0px;
+  height: 117px;*/
+}
+
+.read-button {
+  color: #F05A28;
+}
+
+li {
+  list-style: none;
+  display: block;
+  font-weight: 800;
+  color: #455A64;
+  margin: 8px 7px;
+  font-size: 1.3em;
 }

@@ -8,6 +8,7 @@ var titleContent = document.querySelector('#title-input').value;
 var bookmarkTotal = document.querySelector('#link-total').innerText;
 bookmarkTotal = parseInt(bookmarkTotal);
 var total = 0;
+var totalRead = 0;
 
 var liQueryAll = function() {
   return document.querySelectorAll('li');
@@ -29,7 +30,7 @@ function addBookmark() {
   var deleteButton = document.createElement('button');
   var urlContent = document.querySelector('#url-input').value;
   var titleContent = document.querySelector('#title-input').value;
-  var breakElement = document.createElement('br');
+  var spanElement = document.createElement('span');
 
   var a = document.createElement('a');
   a.href = urlContent;
@@ -40,14 +41,17 @@ function addBookmark() {
 
   userList.appendChild(newElementDiv);
 
-  newElementDiv.setAttribute('class', 'read')
+
   newElementDiv.appendChild(newElementLi);
-  newElementDiv.appendChild(a);
-  a.appendChild(breakElement);
+  newElementDiv.appendChild(spanElement);
+  spanElement.appendChild(a);
   newElementDiv.appendChild(readButton);
   newElementDiv.appendChild(deleteButton);
 
-  readButton.setAttribute('class', 'read-button');
+  spanElement.setAttribute('class', 'span-link')
+
+  readButton.setAttribute('class', 'pre-read')
+
   deleteButton.setAttribute('class', 'delete-button');
 
 
@@ -61,19 +65,35 @@ function addBookmark() {
     if (newElementDiv.classList.contains('read')) {
       newElementDiv.setAttribute('class', '');
       a.setAttribute('class', '');
-      // a.setAttribute('class', '');
+      readButton.setAttribute('class', 'pre-read');
+      totalRead--;
+      console.log(totalRead);
+      document.querySelector('#read-total').innerHTML = totalRead;
     }
     else {
       newElementDiv.setAttribute('class', 'read');
       a.setAttribute('class', 'read');
-      // a.setAttribute('class', 'read-link');
+      readButton.setAttribute('class', 'read-button');
+      totalRead++;
+      console.log(totalRead);
+      document.querySelector('#read-total').innerHTML = totalRead;
     }
   })
 
   deleteButton.addEventListener('click', function() {
-    newElementDiv.remove();
-    total--;
-    document.querySelector('#link-total').innerHTML = total;
+    if (newElementDiv.classList.contains('read')) {
+      totalRead--;
+      document.querySelector('#read-total').innerHTML = totalRead;
+      newElementDiv.remove();
+      total--;
+      document.querySelector('#link-total').innerHTML = total;
+    }
+    else {
+      newElementDiv.remove();
+      total--;
+      document.querySelector('#link-total').innerHTML = total;
+    }
+ 
   })
 
   let liArray = Array.from(liQueryAll());
@@ -135,3 +155,4 @@ titleBar.addEventListener('keyup', function() {
 });
 
 //for turning each li and buttons into arrays with unique identifiers.
+  // newElementDiv.setAttribute('class', 'read')
