@@ -55,4 +55,15 @@ input{
   border: solid 2px red;
   margin: 0px auto;
   padding: 0px 0px;
+
+}.button-add {
+  background-color: #FEC107;
+  box-sizing: border-box;
+ border: none;
+  height: 40px;
+  width: 100%;
+  margin-bottom: 15px;
+  font-size: 1.5em;
+  font-weight: 400;
+  .
 }
