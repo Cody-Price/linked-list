@@ -40,6 +40,7 @@ function addBookmark() {
 
   userList.appendChild(newElementDiv);
 
+  newElementDiv.setAttribute('class', 'read')
   newElementDiv.appendChild(newElementLi);
   newElementDiv.appendChild(a);
   a.appendChild(breakElement);
