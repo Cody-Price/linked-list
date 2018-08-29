@@ -65,6 +65,10 @@ button {
   color: #fff;
 }
 
+.button-add:disabled {
+  background-color: gray;
+}
+
 .button-add:hover {
   background-color: #ffd773;
 }
@@ -80,6 +84,10 @@ button {
   font-weight: 400;
   float: right;
   color: #fff;
+}
+
+#clear-read:disabled {
+  background-color: gray;
 }
 
 #clear-read:hover {

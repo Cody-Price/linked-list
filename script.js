@@ -5,23 +5,8 @@ var urlBar =  document.querySelector('#url-input');
 var titleBar = document.querySelector('#title-input');
 var urlContent = document.querySelector('#url-input').value;
 var titleContent = document.querySelector('#title-input').value;
-// var bookmarkTotal = document.querySelector('#link-total').innerText;
-// // bookmarkTotal = parseInt(bookmarkTotal);
 var total = 0;
 var totalRead = 0;
-
-// var liQueryAll = function() {
-//   return document.querySelectorAll('li');
-// }
-// var aQueryAll = function() {
-//   return document.querySelectorAll('a');
-// }
-// var readQueryAll = function() {
-//   return document.querySelectorAll('.read-button');
-// }
-// var deleteQueryAll = function() {
-//   return document.querySelectorAll('.delete-button');
-// 
 
 //refactor this into a single append with .innerhtml
 function addBookmark() {
@@ -76,11 +61,9 @@ function addBookmark() {
       a.setAttribute('class', 'read');
       readButton.setAttribute('class', 'read-button');
       totalRead++;
-      // console.log(totalRead);
       document.querySelector('#read-total').innerHTML = totalRead;
     }
   })
-
   deleteButton.addEventListener('click', function() {
     if (newElementDiv.classList.contains('read')) {
       totalRead--;
@@ -94,27 +77,7 @@ function addBookmark() {
       total--;
       document.querySelector('#link-total').innerHTML = total;
     }
- 
   })
-
-  // let liArray = Array.from(liQueryAll());
-  // let readArray = Array.from(readQueryAll());
-  // let deleteArray = Array.from(deleteQueryAll());
-  // let aArray = Array.from(aQueryAll());
-
-  // for (var i = 0; i < liArray.length; i++) {
-  //   newElementLi.setAttribute('id', [i]);
-  // }
-  // for (var i = 0; i < aArray.length; i++) {
-  //   a.setAttribute('id', [i] + 100)
-  // }
-  // for (var i = 0; i < readArray.length; i++) {
-  //   readButton.setAttribute('id', [i] + 1000);
-  // }
-  // for (var i = 0; i < deleteArray.length; i++) {
-  //   deleteButton.setAttribute('id', [i] + 10000);
-  // }
-
   total++;
   document.querySelector('#link-total').innerHTML = total;
 }
@@ -131,10 +94,6 @@ $('#clear-read').on('click', function() {
 createBookmark = buttonAdd.addEventListener('click', function () {
   addBookmark();
 })
-
-// buttonAllReadDelete.addEventListener('click', function() {
-//   document.querySelectorAll('.read').remove();
-// })
 
 function submitDisabled() {
   if (titleBar.value !== '' && urlBar.value !== '') {
@@ -155,6 +114,9 @@ urlBar.addEventListener('paste', function() {
   console.log('pasted');
 })
 
+
+
+
 urlBar.addEventListener('keyup', function() {
   submitDisabled();
 });
@@ -162,6 +124,3 @@ urlBar.addEventListener('keyup', function() {
 titleBar.addEventListener('keyup', function() {
   submitDisabled();
 });
-
-//for turning each li and buttons into arrays with unique identifiers.
-  // newElementDiv.setAttribute('class', 'read')
