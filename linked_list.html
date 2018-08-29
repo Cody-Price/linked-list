@@ -7,6 +7,9 @@
    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
+
+<!-- start -->
+
   <body>
     <section class="upper-sec">
       <h1>
@@ -18,11 +21,13 @@
         <input type="text" name="title" id="title-input" placeholder="Website Title">
         <input type="url" name="link" id="url-input" placeholder="Website URL">
         <button type="button" class="button-add" disabled="true">Enter</button>
+        <button id="clear-read">Clear Read</button>
       </form>
-      <button id="clear-read">Clear All Read</button>
-      <p class="total-links-paragraph">Total number of links <span id="link-total">0</span></p>
-      <p class="total-read-links-paragraph">Total number of Read Links <span id="read-total">0</span></p>
-      <p class="total-unread-links-paragraph">Total number of Unread Links <span id="unread-total">0</span></p>
+      <div class="totals-div">
+        <p class="total-links-paragraph">Links:   <span id="link-total">0</span></p>
+        <p class="total-read-links-paragraph">Read:   <span id="read-total">0</span></p>
+        <p class="total-unread-links-paragraph">Unread:   <span id="unread-total">0</span></p>
+      </div>
     </section>
     <section class="lower-sec">
       <article id="user-list">

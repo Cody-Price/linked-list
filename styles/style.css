@@ -3,22 +3,12 @@ body {
   font-family: 'Open Sans', sans-serif;
   background-color: #CFD8DC;
 }
+
 .upper-sec {
  background-color: #455A64;
  width:100%;
-}
-.upper-sec h1 {
-  font-weight: 800;
-  color: #fff;
-}
-
-.lower-sec {
-  background-color: #CFD8DC;
-}
-
-img {
-  width: 50px;
-  height: 20px;
+ color: #fff;
+ font-weight: 800;
 }
 
 h1 {
@@ -27,15 +17,19 @@ h1 {
   padding-top: 14px;
 }
 
+img {
+  width: 50px;
+  height: 20px;
+}
+
 form {
   box-sizing: border-box;
   min-width: 300px;
   max-width: 600px;
   width: 100%;
-/*  border-box keeps the box size the same as your set width 
-  and hight regardless of padding margin bourder etc.*/
   padding: 20px 10px;
   height: 190px;
+  margin: 0 auto;
 }
 
 input{
@@ -47,20 +41,118 @@ input{
   font-weight: 400;
 }
 
+#url-input,
+#title-input {
+  padding-left: 5px;
+}
+
+button {
+  float: left;
+  margin: 5px 0px;
+  color: #455A64;
+  padding: 0 13px;
+}
+
+.button-add {
+  background-color: #FEC107;
+  box-sizing: border-box;
+  border: none;
+  height: 40px;
+  width: 46.5%;
+  margin-bottom: 15px;
+  font-size: 1.5em;
+  font-weight: 400;
+  color: #fff;
+}
+
+.button-add:hover {
+  background-color: #ffd773;
+}
+
 #clear-read {
-  color: white;
+  background-color: #FEC107;
+  box-sizing: border-box;
+  border: none;
+  height: 40px;
+  width: 46.5%;
+  margin-bottom: 15px;
+  font-size: 1.4em;
+  font-weight: 400;
+  float: right;
+  color: #fff;
+}
+
+#clear-read:hover {
+  background-color: #ffd773;
+}
+
+.totals-div {
+  background-color: transparent;
+  box-sizing: border-box;
+  min-width: 300px;
+  max-width: 320px;
+  width: 100%;
+  padding: 20px 0;
+  height: 45px;
+  margin: 0 auto;
+  border: 0;
+}
+
+.total-links-paragraph,
+.total-read-links-paragraph,
+.total-unread-links-paragraph {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 20px;
+  margin: 0 10px;
+  position: relative;
+  top: -16px;
+}
+
+.lower-sec {
+  background-color: #CFD8DC;
+}
+
+#user-list {
+  width: 100%;
+}
+
+div {
+  width: 90%;
+  border: solid 2px #607D8B;
+  margin: 11px auto;
+  padding: 5px 0px;
+  height: 117px;
+  background-color: white;
+}
+
+div.read {
+  background-color: #f2f2f4;
+}
+
+li {
+  list-style: none;
+  display: block;
+  font-weight: 800;
+  color: #455A64;
+  margin: 8px 13px;
+  font-size: 1.3em;
 }
 
 a {
   border-top: solid 2px;
   border-bottom: solid 2px;
   border-color: #CFD8DC;
-  padding: 20px 0px;
+  padding: 16px 0px;
   display: block;
   width: 95%;
   margin: 0px auto;
   color: #607D8B;
   text-decoration: underline solid #f2f2f4;
+}
+
+a.read {
+  text-decoration: underline solid #CFD8DC;
 }
 
 a:hover {
@@ -84,7 +176,8 @@ a:hover {
 .read-button {
   float: left;
   margin: 5px 0px;
-  color: #455A64;
+  color: #f05a28;
+  font-weight: 800;
   background-color: transparent;
   border: none;
   text-decoration: underline solid #f2f4f4;
@@ -104,54 +197,6 @@ a:hover {
   text-decoration: underline solid #ffc107;
 }
 
-#title-input,
-#url-input {
-  padding-left: 5px;
-}
+@media screen and (min-width: 650px) {
 
-#user-list {
-  width: 100%;
-}
-
-div {
-  width: 90%;
-  border: solid 2px #607D8B;
-  margin: 15px auto;
-  padding: 5px 0px;
-  height: 117px;
-  background-color: white;
-}
-
-div.read {
-  background-color: #f2f2f4;
-}
-
-button {
-  float: left;
-  margin: 5px 0px;
-  color: #455A64;
-}
-
-.read-button {
-  color: #F05A28;
-}
-
-li {
-  list-style: none;
-  display: block;
-  font-weight: 800;
-  color: #455A64;
-  margin: 8px 7px;
-  font-size: 1.3em;
-}
-
-.button-add {
-  background-color: #FEC107;
-  box-sizing: border-box;
-  border: none;
-  height: 40px;
-  width: 100%;
-  margin-bottom: 15px;
-  font-size: 1.5em;
-  font-weight: 400;
 }
