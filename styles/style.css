@@ -1,18 +1,14 @@
+
 body {
   font-family: 'Open Sans', sans-serif;
+  background-color: #CFD8DC;
 }
+
 .upper-sec {
  background-color: #455A64;
  width:100%;
-}
-.upper-sec h1 {
-  font-weight: 800;
-  color: #fff;
-}
-
-img {
-  width: 50px;
-  height: 30px;
+ color: #fff;
+ font-weight: 800;
 }
 
 h1 {
@@ -21,15 +17,19 @@ h1 {
   padding-top: 14px;
 }
 
+img {
+  width: 50px;
+  height: 20px;
+}
+
 form {
   box-sizing: border-box;
   min-width: 300px;
   max-width: 600px;
   width: 100%;
-/*  border-box keeps the box size the same as your set width 
-  and hight regardless of padding margin bourder etc.*/
   padding: 20px 10px;
-  height: 200px;
+  height: 190px;
+  margin: 0 auto;
 }
 
 input{
@@ -41,29 +41,235 @@ input{
   font-weight: 400;
 }
 
-#title-input,
-#url-input {
+#url-input,
+#title-input {
   padding-left: 5px;
+}
+
+button {
+  float: left;
+  margin: 5px 0px;
+  color: #455A64;
+  padding: 0 13px;
+}
+
+.button-add {
+  background-color: #FEC107;
+  box-sizing: border-box;
+  border: none;
+  height: 40px;
+  width: 46.5%;
+  margin-bottom: 15px;
+  font-size: 1.5em;
+  font-weight: 400;
+  color: #fff;
+}
+
+.button-add:hover {
+  background-color: #ffd773;
+}
+
+.button-add:disabled {
+  background-color: gray;
+}
+
+.button-add:disabled:hover {
+  background-color: gray;
+}
+
+#clear-read {
+  background-color: #FEC107;
+  box-sizing: border-box;
+  border: none;
+  height: 40px;
+  width: 46.5%;
+  margin-bottom: 15px;
+  font-size: 1.4em;
+  font-weight: 400;
+  float: right;
+  color: #fff;
+}
+
+#clear-read:disabled {
+  background-color: gray;
+}
+
+#clear-read:hover {
+  background-color: #ffd773;
+}
+
+.totals-div {
+  background-color: transparent;
+  box-sizing: border-box;
+  min-width: 300px;
+  max-width: 320px;
+  width: 100%;
+  padding: 20px 0;
+  height: 45px;
+  margin: 0 auto;
+  border: 0;
+}
+
+.total-links-paragraph,
+.total-read-links-paragraph,
+.total-unread-links-paragraph {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 20px;
+  margin: 0 13px;
+  position: relative;
+  top: -16px;
+  font-weight: 400;
+}
+
+.lower-sec {
+  background-color: #CFD8DC;
 }
 
 #user-list {
   width: 100%;
 }
 
-.read {
+div {
   width: 90%;
-  border: solid 2px red;
-  margin: 0px auto;
-  padding: 0px 0px;
+  border: solid 2px #607D8B;
+  margin: 11px auto;
+  padding: 5px 0px;
+  height: 117px;
+  background-color: white;
+}
 
-}.button-add {
-  background-color: #FEC107;
-  box-sizing: border-box;
- border: none;
-  height: 40px;
-  width: 100%;
-  margin-bottom: 15px;
-  font-size: 1.5em;
-  font-weight: 400;
-  .
+div.read {
+  background-color: #f2f2f4;
+}
+
+li {
+  list-style: none;
+  display: block;
+  font-weight: 800;
+  color: #455A64;
+  margin: 8px 13px;
+  font-size: 1.3em;
+}
+
+a {
+  border-top: solid 2px;
+  border-bottom: solid 2px;
+  border-color: #CFD8DC;
+  padding: 16px 0px;
+  display: block;
+  width: 95%;
+  margin: 0px auto;
+  color: #607D8B;
+  text-decoration: underline solid #f2f2f4;
+}
+
+a.read {
+  text-decoration: underline solid #CFD8DC;
+}
+
+a:hover {
+  font-weight: 800;
+  color: #455a54;
+  text-decoration: underline solid #ffc107;
+}
+
+.pre-read {
+  background-color: transparent;
+  border: none;
+  text-decoration: underline solid #f2f4f4;
+}
+
+.pre-read:hover {
+  font-weight: 800;
+  color: #455a54;
+  text-decoration: underline solid #ffc107;
+}
+
+.read-button {
+  float: left;
+  margin: 5px 0px;
+  color: #f05a28;
+  font-weight: 800;
+  background-color: transparent;
+  border: none;
+  text-decoration: underline solid #f2f4f4;
+}
+
+.delete-button {
+  float: right;
+  margin: 5px 0px;
+  color: #455A64;
+  border: none;
+  background-color: transparent;
+  text-decoration: underline solid #f2f2f4;
+}
+
+.delete-button:hover {
+  color: #455a54;
+  text-decoration: underline solid #ffc107;
+}
+
+@media screen and (min-width: 450px) {
+  .upper-sec {
+    float: left;
+    width: 50%;
+    min-height: 1200px;
+    position: fixed;
+    padding-top: 275px
+  }
+
+  h1 {
+    font-size: 5em;
+  }
+
+  img {
+    width: 112px;
+    height: 71px;
+  }
+
+  #title-input,
+  #url-input {
+    margin: 20px 0;
+  }
+
+  button {
+    font-size: 1.25em;
+    margin-top: 5px;
+  }
+
+  .button-add,
+  #clear-read {
+    margin: 20px 0;
+  }
+
+  .total-links-paragraph,
+  .total-read-links-paragraph,
+  .total-unread-links-paragraph {
+    font-weight: 400;
+    margin: 36px 13px;
+  }
+
+  .lower-sec {
+    float: right;
+    width: 50%;
+  }
+
+  div {
+    height: 200px;
+    margin: 30px auto;
+  }
+
+  li {
+    font-size: 2.2em;
+    margin: 8px 13px 15px;
+;
+  }
+
+  a {
+    font-size: 1.75em;
+    padding: 34px 0;
+  }
+
+
 }
