@@ -104,7 +104,7 @@ button {
   min-width: 300px;
   max-width: 320px;
   width: 100%;
-  padding: 20px 0;
+  padding: 20px 13px;
   height: 45px;
   margin: 0 auto;
   border: 0;
@@ -116,7 +116,7 @@ button {
   display: inline-block;
   color: #ffffff;
   font-size: 20px;
-  margin: 0 13px;
+  margin: 0 9px;
   position: relative;
   top: -16px;
   font-weight: 400;
@@ -216,11 +216,11 @@ a:hover {
     width: 50%;
     min-height: 1200px;
     position: fixed;
-    padding-top: 275px
+    padding-top: 235px
   }
 
   h1 {
-    font-size: 5em;
+    font-size: 4.5em;
   }
 
   img {
@@ -247,7 +247,7 @@ a:hover {
   .total-read-links-paragraph,
   .total-unread-links-paragraph {
     font-weight: 400;
-    margin: 36px 13px;
+    margin: 36px 9px;
   }
 
   .lower-sec {
